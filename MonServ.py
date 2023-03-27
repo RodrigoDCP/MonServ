@@ -130,7 +130,7 @@ def Lista():
 	print("Enlistando servicios...")
 	time.sleep(1)
 	print(colored("------------------------------------------", 'blue'))
-	os.system('firewall-cmd --zone-public --list-all')
+	os.system('firewall-cmd --zone=public --list-all')
 	
 	
 			
