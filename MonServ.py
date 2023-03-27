@@ -21,7 +21,7 @@ print(colored("""
 |_|  |_|\___/|_| |_|____/ \___|_|    \_/ 
 """, 'cyan'))
 print(colored("			By Cañas", 'green'))
-print(colored("				Version - 1.2", 'green'))
+print(colored("				Version - 1.2.1", 'green'))
 print(colored("Ubuntu-server version...", 'magenta'))
 
 # ESCANEOS DE PUERTOS --------------------------------------------------
@@ -126,6 +126,13 @@ def cargarConf():
 	time.sleep(1)
 	os.system('firewall-cmd --reload')
 	
+def Lista():
+	print("Enlistando servicios...")
+	time.sleep(1)
+	print(colored("------------------------------------------", 'blue'))
+	os.system('firewall-cmd --zone-public --list-all')
+	
+	
 			
 
 
@@ -139,6 +146,7 @@ def FIREWALLD():
 		print(colored("[1]", 'yellow'), "Estado del Firewall")
 		print(colored("[2]", 'yellow'), "Habilitar Firewall")
 		print(colored("[3]", 'yellow'), "Deshabilitar Firewall")
+		print(colored("[4]", 'yellow'), "Listar servicios protegidos")
 		print(colored("[c]", 'magenta'), "Limpiar consola")
 		print(colored("[0]", 'magenta'), "Regresar al menu")
 		print(colored("------------------------------------------", 'blue'))
@@ -152,6 +160,8 @@ def FIREWALLD():
 			Habilitar()
 		elif opcion == "3":
 			Deshabilitar()
+		elif opcion == "4":
+			Lista()
 		elif opcion == "0":
 			menu()
 		elif opcion == "c":
