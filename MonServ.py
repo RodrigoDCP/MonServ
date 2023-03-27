@@ -75,34 +75,91 @@ def cantidad_usuarios():
     print(colored("------------------------------------------", "blue"))
     os.system("who")
     time.sleep(1)
-    
+  
 def kill():
-    print("Matando sesiones...")
+    print("users   Terminal     Feheca de inicio")
+    print(colored("------------------------------------------", "blue"))
     time.sleep(1)
-    os.system("""pkill -KILL -u $(who | grep -v root | awk '{print $1}')""")
+    os.system("who")
+    print(colored("------------------------------------------", "blue"))
+    terminal = input("Ingresa la terminal: ")
+    opc = input("Estas seguro? [yes or no]: ")
+    os.system('clear')
+    
+    if opc == "yes":
+    	os.system('pkill -9 -t' + terminal)
+    	time.sleep(1)
+    	print("Sesiones:")
+    	print(colored("------------------------------------------", "blue"))
+    	os.system("who")
+    	time.sleep(2)
+    elif opc == "no":
+    	usuario()   
+    
+    else:
+    	     print("Opción invalida")
+    	     time.sleep(1)
 
 # Firewall acciones -------------------------------------------------------
 
 
 
-# FIREWALLD ---------------------------------------------------------------
+# firewall ---------------------------------------------------------------
+
+def statusF():
+	print("Verificando servicio...")
+	time.sleep(1)
+	os.system('service firewalld status')
+	
+def Habilitar():
+	print("Habilitando Firewall")
+	time.sleep(1)
+	os.system('systemctl start firewalld && systemctl enable firewalld')
+	
+def Deshabilitar():
+	print("Deshabilitando Firewall")
+	time.sleep(1)
+	os.system('systemctl stop firewalld && systemctl disable firewalld')
+	
+def cargarConf():
+	print("Cargando Configuraciones")
+	time.sleep(1)
+	os.system('firewall-cmd --reload')
+	
+			
+
+
+# MENUS -------------------------------------------------------------------
 
 def FIREWALLD():
 	while True:
 		print(colored("------------------------------------------", 'blue'))
 		print(colored("FirewallD", 'yellow'))
 		print(colored("------------------------------------------", 'blue'))
-		print(colored("[1]", 'yellow'), "Verificar status de servicios")
+		print(colored("[1]", 'yellow'), "Estado del Firewall")
+		print(colored("[2]", 'yellow'), "Habilitar Firewall")
+		print(colored("[3]", 'yellow'), "Deshabilitar Firewall")
 		print(colored("[c]", 'magenta'), "Limpiar consola")
 		print(colored("[0]", 'magenta'), "Regresar al menu")
 		print(colored("------------------------------------------", 'blue'))
 		
 		opcion = input(colored("Selecciona una opción: ", 'green'))
 		os.system('clear')
-			
+		
+		if opcion == "1":
+			statusF()
+		elif opcion == "2":
+			Habilitar()
+		elif opcion == "3":
+			Deshabilitar()
+		elif opcion == "0":
+			menu()
+		elif opcion == "c":
+			os.system('clear')	
+		else:
+			print(colored("Opción no válida", 'red'))
+			time.sleep(1)
 
-
-# MENUS -------------------------------------------------------------------
 
 def menuNmap():
 	while True:
@@ -140,7 +197,7 @@ def usuario():
 		print(colored("Usuarios", 'yellow'))
 		print(colored("------------------------------------------", "blue"))
 		print(colored("[1]", 'yellow'), "Usuarios en linea")
-		print(colored("[2]", 'yellow'), "Matar todas las sesiones (Menos a root")
+		print(colored("[2]", 'yellow'), "Matar sesiones")
 		print(colored("[c]", 'magenta'), "Limpiar consola")
 		print(colored("[0]", 'magenta'), "Regresar al menu principal")
 		print(colored("------------------------------------------", "blue"))
