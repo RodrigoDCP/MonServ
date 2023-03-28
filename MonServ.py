@@ -88,20 +88,17 @@ def kill():
     
     if opc == "yes":
     	os.system('pkill -9 -t' + terminal)
+    	print(colored("Lista actualizada:", 'yellow'))
     	time.sleep(1)
-    	print("Sesiones:")
     	print(colored("------------------------------------------", "blue"))
     	os.system("who")
     	time.sleep(2)
     elif opc == "no":
     	usuario()   
-    
+
     else:
     	     print("Opción invalida")
     	     time.sleep(1)
-
-# Firewall acciones -------------------------------------------------------
-
 
 
 # firewall ---------------------------------------------------------------
