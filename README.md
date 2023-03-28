@@ -22,11 +22,11 @@ This option uses a cracking tool called "John" which uses its own list or bank o
 
 Version 1.2 comes with a series of improvements and new features to make the user experience even better. Firstly, the user interface has been redesigned to make it easier to read and use for common technology users. The new interface has a more readable design, which will facilitate the reading and visualization of results.
 
-In addition, the "user options" section has been improved. Previously, this section included a beta function to remove users. Now, this function has been replaced with a more stable and usable option. This will ensure that users are correctly removed (leaving only the root user), providing a safer and more stable experience.
+The user removal function has been modified to include disconnecting remote terminals. This ensures the complete removal of unknown users from the server, improving its security by 100%. With this update, inactive or unauthorized users will be automatically disconnected, preventing any unauthorized access to the server and ensuring the integrity of its data and resources.
 
-We are also working on the idea of including the possibility of configuring basic parts of the firewall using Firewalld for Ubuntu Server. Firewalld is a firewall configuration tool that provides a more advanced solution for controlling network traffic. While we are still working on this idea, we believe that this feature would allow users to easily configure the firewall and improve the security of their servers.
+The firewall section is already operational, however, it currently has limited and basic options.
 
-In summary, version 1.2 brings several improvements and new features that will significantly enhance the user experience. From a redesigned user interface to a possible firewall configuration tool, these updates will provide a safer, more stable, and easier-to-use experience.
+
 
 
 
