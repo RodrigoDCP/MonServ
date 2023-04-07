@@ -1,0 +1,18 @@
+Antes de usar la herramienta, instala los requerimientos necesarios para esta herramienta
+dale permisos al archivo de instalación "install.sh" que ejecutara varios comandos de 
+instalación, para hacerlo, haz lo siguiente:
+
+chmod +x install.sh
+
+luego de darle permisos, ya puedes ejecutar el instalador de la siguiente manera:
+
+./install.sh
+
+comenzara con la instalación, mantente atendo a la instalación, puede que en algun momento
+te pida permisos extras y des autorizacion con = [y or n]
+
+para aceptar "y"
+
+para negar "n"
+
+solo en caso de ser necesario, puede que no te pidan más nada despues de la instalación.
