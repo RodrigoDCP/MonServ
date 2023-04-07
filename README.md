@@ -18,6 +18,34 @@ This option uses a cracking tool called "John" which uses its own list or bank o
 
 ![Texto alternativo de la imagen](IMG/V2/contraseñaV2.PNG)
 
+# Instalation / Instalación
+
+Before using the tool, install the necessary requirements for it. Give permissions to the installation file "install.sh" that will run several installation commands by doing the following:
+
+```bash
+chmod +x install.sh
+```
+
+After giving permissions, you can run the installer as follows:
+
+```bash
+./install.sh
+```
+
+It will start the installation process. Keep an eye on the installation process as it may ask for extra permissions and require authorization with [y or n].
+
+To accept, type "y"
+
+To deny, type "n"
+
+Only if necessary, it may not ask for anything else after the installation.
+
+Finally, to run the code, use the following command:
+
+```bash
+python3 MonServ.py
+```
+
 # Updates/Actualizaciones
 
 Version 1.2 comes with a series of improvements and new features to make the user experience even better. Firstly, the user interface has been redesigned to make it easier to read and use for common technology users. The new interface has a more readable design, which will facilitate the reading and visualization of results.
